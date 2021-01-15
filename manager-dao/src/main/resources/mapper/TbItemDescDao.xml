@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shengde.e3mall.dao.TbItemDescDao">
+
+    <resultMap type="com.shengde.e3mall.entity.TbItemDesc" id="TbItemDescMap">
+        <result property="itemId" column="item_id" jdbcType="INTEGER"/>
+        <result property="created" column="created" jdbcType="TIMESTAMP"/>
+        <result property="updated" column="updated" jdbcType="TIMESTAMP"/>
+        <result property="itemDesc" column="item_desc" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="itemId" useGeneratedKeys="true">
+        insert into e3mall.tb_item_desc(created, updated, item_desc)
+        values (#{created}, #{updated}, #{itemDesc})
+    </insert>
+
+
+</mapper>

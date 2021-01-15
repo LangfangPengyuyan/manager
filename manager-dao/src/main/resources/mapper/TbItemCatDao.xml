@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shengde.e3mall.dao.TbItemCatDao">
+
+    <resultMap type="com.shengde.e3mall.entity.TbItemCat" id="TbItemCatMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="sortOrder" column="sort_order" jdbcType="INTEGER"/>
+        <result property="isParent" column="is_parent" jdbcType="INTEGER"/>
+        <result property="created" column="created" jdbcType="TIMESTAMP"/>
+        <result property="updated" column="updated" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TbItemCatMap" parameterType="com.shengde.e3mall.entity.TbItemCat">
+        select
+               *
+        from
+             e3mall.tb_item_cat
+        where
+              parent_id = #{parentId}
+    </select>
+
+
+
+
+
+
+</mapper>
