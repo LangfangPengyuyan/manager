@@ -55,12 +55,10 @@
         </where>
     </select>
 
-
     <insert id="insert" parameterType="com.shengde.e3mall.entity.TbContentCategory">
-        <selectKey keyProperty="id" resultType="int" order="AFTER" id="">
-            select last_insert_id(),
+        <selectKey keyProperty="id" resultType="int" order="AFTER" >
+            select last_insert_id()
         </selectKey>
-
-
+        insert into tb_content_category values (#{id},#{parentId},#{name},#{status},#{sortOrder},#{created},#{updated})
     </insert>
 </mapper>

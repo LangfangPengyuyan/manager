@@ -22,10 +22,8 @@ public class ItemCatController {
     @RequestMapping("/item/cat/list")
     @ResponseBody
     public List<EasyUITreeNode> getItemCatList(@RequestParam(name = "id",defaultValue = "0") int parentId){
-
         //调用服务查询节点列表
         List<EasyUITreeNode> list = itemCatService.getItemCatlist(parentId);
-
         return list;
     }
 }
