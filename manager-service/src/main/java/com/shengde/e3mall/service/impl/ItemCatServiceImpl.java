@@ -1,12 +1,10 @@
 package com.shengde.e3mall.service.impl;
-
 import com.shengde.e3mall.common.pojo.EasyUITreeNode;
 import com.shengde.e3mall.dao.TbItemCatDao;
 import com.shengde.e3mall.entity.TbItemCat;
 import com.shengde.e3mall.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +33,7 @@ public class ItemCatServiceImpl implements ItemCatService {
             //设置属性
             node.setId(i.getId());
             node.setText(i.getName());
-            node.setState(Boolean.parseBoolean(i.getIsParent()?"closed":"open"));
+            node.setState((i.getIsParent()?"closed":"open"));
 
             //添加到结果列表
             resultList.add(node);

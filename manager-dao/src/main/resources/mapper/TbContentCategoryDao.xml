@@ -14,7 +14,7 @@
     </resultMap>
 
     <!--查询单个-->
-    <select id="queryById" resultMap="TbContentCategoryMap">
+    <select id="queryById" resultMap="TbContentCategoryMap" parameterType="com.shengde.e3mall.entity.TbContentCategory">
         select id,
                parent_id,
                name,
