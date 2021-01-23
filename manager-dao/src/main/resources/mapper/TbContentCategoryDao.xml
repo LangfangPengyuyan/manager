@@ -30,29 +30,32 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="TbContentCategoryMap" parameterType="com.shengde.e3mall.entity.TbContentCategory">
         select
-        *
-        from e3mall.tb_content_category
-        <where>
-            <if test="id != null">
-                and id = #{id}
-            </if>
+            *
+        from
+            e3mall.tb_content_category
+        where
+            parent_id = #{parentId}
+<!--        <where>-->
+<!--            <if test="id != null">-->
+<!--                and id = #{id}-->
+<!--            </if>-->
 
-            <if test="parentId != null">
-                and parent_id = #{parentId}
-            </if>
-            <if test="name != null and sellPoint != ''">
-                and name = #{name}
-            </if>
-            <if test="status != null">
-                and status = #{status}
-            </if>
-            <if test="sortOrder != null and sortOrder != ''">
-                and sort_order = #{sortOrder}
-            </if>
-            <if test="isParent != null ">
-                and is_parent = #{isParent}
-            </if>
-        </where>
+<!--            <if test="parentId != null">-->
+<!--                and parent_id = #{parentId}-->
+<!--            </if>-->
+<!--            <if test="name != null and sellPoint != ''">-->
+<!--                and name = #{name}-->
+<!--            </if>-->
+<!--            <if test="status != null">-->
+<!--                and status = #{status}-->
+<!--            </if>-->
+<!--            <if test="sortOrder != null and sortOrder != ''">-->
+<!--                and sort_order = #{sortOrder}-->
+<!--            </if>-->
+<!--            <if test="isParent != null ">-->
+<!--                and is_parent = #{isParent}-->
+<!--            </if>-->
+<!--        </where>-->
     </select>
 
     <insert id="insert" parameterType="com.shengde.e3mall.entity.TbContentCategory">

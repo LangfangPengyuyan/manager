@@ -4,13 +4,12 @@ import com.shengde.e3mall.common.pojo.EasyUIDataGridResult;
 import com.shengde.e3mall.common.utils.E3Result;
 import com.shengde.e3mall.entity.TbItem;
 import com.shengde.e3mall.service.TbItemService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 
 
 /**
@@ -25,7 +24,7 @@ public class ItemController {
     /**
      * 服务对象
      */
-    @Autowired
+    @Resource
     private TbItemService tbItemService;
 
     /**
@@ -34,7 +33,7 @@ public class ItemController {
      * @param  主键
      * @return 单条数据
      */
-    @GetMapping("/item/{itemId}")
+    @RequestMapping("/item/{itemId}")
     @ResponseBody
     public TbItem getItemById(Integer itemId) {
 

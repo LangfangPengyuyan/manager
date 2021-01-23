@@ -26,7 +26,7 @@ public interface TbContentCategoryDao {
      * @param tbContentCategory 实例对象
      * @return 对象列表
      */
-    List<TbContentCategory> queryAll(int parentId);
+    List<TbContentCategory> queryAll(TbContentCategory tbContentCategory);
 
     /**
      * 新增数据
