@@ -8,15 +8,6 @@
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
 
-  <!-- 加载spring容器 -->
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:applicationContext*.xml</param-value>
-  </context-param>
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-
   <!-- 解决post乱码 -->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
@@ -30,7 +21,6 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
 
   <!-- springmvc的前端控制器 -->
   <servlet>
@@ -47,6 +37,5 @@
     <servlet-name>manager</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
 
 </web-app>
