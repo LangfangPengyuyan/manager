@@ -8,13 +8,13 @@
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
         <result property="sortOrder" column="sort_order" jdbcType="VARCHAR"/>
-
+        <result property="isParent" column="is_parent" jdbcType="INTEGER"/>
         <result property="created" column="created" jdbcType="TIMESTAMP"/>
         <result property="updated" column="updated" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <!--查询单个-->
-    <select id="queryById" resultMap="TbContentCategoryMap" parameterType="com.shengde.e3mall.entity.TbContentCategory">
+    <select id="queryById" resultMap="TbContentCategoryMap" parameterType="java.lang.Integer">
         select id,
                parent_id,
                name,
@@ -41,6 +41,6 @@
         <selectKey keyProperty="id" resultType="int" order="AFTER" >
             select last_insert_id()
         </selectKey>
-        insert into tb_content_category values (#{id},#{parentId},#{name},#{status},#{sortOrder},#{created},#{updated})
+        insert into tb_content_category values (#{id},#{parentId},#{name},#{status},#{sortOrder},#{isParent},#{created},#{updated})
     </insert>
 </mapper>

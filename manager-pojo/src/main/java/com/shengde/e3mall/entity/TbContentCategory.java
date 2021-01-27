@@ -16,46 +16,21 @@ public class TbContentCategory implements Serializable {
 
     private Integer parentId;
 
-    public Integer getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Integer parentId) {
-        this.parentId = parentId;
-    }
-
-    public Boolean getParent() {
-        return isParent;
-    }
-
-    public void setParent(Boolean parent) {
-        isParent = parent;
-    }
-
     private String name;
 
     private Integer status;
 
     private String sortOrder;
 
-    private Boolean isParent;
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
-    public Boolean getIsParent() {
-        return isParent;
-    }
-
-    public void setIsParent(Boolean isParent) {
-        this.isParent = isParent;
-    }
+    private Integer isParent;
 
     private Date created;
 
     private Date updated;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getId() {
         return id;
@@ -65,7 +40,13 @@ public class TbContentCategory implements Serializable {
         this.id = id;
     }
 
+    public Integer getParentId() {
+        return parentId;
+    }
 
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
 
     public String getName() {
         return name;
@@ -91,7 +72,13 @@ public class TbContentCategory implements Serializable {
         this.sortOrder = sortOrder;
     }
 
+    public Integer getIsParent() {
+        return isParent;
+    }
 
+    public void setIsParent(Integer isParent) {
+        this.isParent = isParent;
+    }
 
     public Date getCreated() {
         return created;
@@ -108,5 +95,4 @@ public class TbContentCategory implements Serializable {
     public void setUpdated(Date updated) {
         this.updated = updated;
     }
-
 }
